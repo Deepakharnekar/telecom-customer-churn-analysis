@@ -170,4 +170,4 @@ ORDER BY churn_percentage DESC;
 ## 🙋 Author
 
 **[Deepak Rajesh Harnekar]**
-[[LinkedIn Profile](https://www.linkedin.com/in/deepakharnekar/)] | [https://github.com/Deepakharnekar]
+[[LinkedIn Profile](https://www.linkedin.com/in/deepakharnekar/)] | [github repo][https://github.com/Deepakharnekar]
