@@ -122,13 +122,13 @@ ORDER BY churn_percentage DESC;
 ## 📊 Dashboard Preview
 
 > 📌 *Power BI dashboard screenshots*
-![image alt](https://github.com/Deepakharnekar/telecom-customer-churn-analysis/blob/09036d084b8fbf309f10a38e8280b4a6e01a58d7/screenshots/Screenshot%202026-03-16%20113936.png)
-![image alt](https://github.com/Deepakharnekar/telecom-customer-churn-analysis/blob/49d06e8915d7068e4b00b16600548094bdc37be5/screenshots/Screenshot%202026-03-16%20154616.png)
-![image alt](https://github.com/Deepakharnekar/telecom-customer-churn-analysis/blob/49d06e8915d7068e4b00b16600548094bdc37be5/screenshots/Screenshot%202026-03-16%20154644.png)
-![image alt](https://github.com/Deepakharnekar/telecom-customer-churn-analysis/blob/ed498d99516f2b08d037f40a6471baf563ee4139/screenshots/Screenshot%202026-03-16%20114039.png)
-![image alt](https://github.com/Deepakharnekar/telecom-customer-churn-analysis/blob/49d06e8915d7068e4b00b16600548094bdc37be5/screenshots/Screenshot%202026-03-16%20164810.png)
-![image alt](https://github.com/Deepakharnekar/telecom-customer-churn-analysis/blob/ed498d99516f2b08d037f40a6471baf563ee4139/screenshots/Screenshot%202026-03-16%20114054.png)
-![image alt](https://github.com/Deepakharnekar/telecom-customer-churn-analysis/blob/ed498d99516f2b08d037f40a6471baf563ee4139/screenshots/Screenshot%202026-03-16%20114120.png)
+![image alt](https://github.com/Deepakharnekar/telecom-customer-churn-analysis/blob/c24f00dad1a4f1fd398b3080288500ad798dbc7a/screenshots/overview.png)
+![image alt](https://github.com/Deepakharnekar/telecom-customer-churn-analysis/blob/c24f00dad1a4f1fd398b3080288500ad798dbc7a/screenshots/services.png)
+![image alt](https://github.com/Deepakharnekar/telecom-customer-churn-analysis/blob/c24f00dad1a4f1fd398b3080288500ad798dbc7a/screenshots/streaming%20and%20demographics.png)
+![image alt](https://github.com/Deepakharnekar/telecom-customer-churn-analysis/blob/c24f00dad1a4f1fd398b3080288500ad798dbc7a/screenshots/contract%20%26%20payment%20method.png)
+![image alt](https://github.com/Deepakharnekar/telecom-customer-churn-analysis/blob/c24f00dad1a4f1fd398b3080288500ad798dbc7a/screenshots/monthly%20%26%20total%20charges.png)
+![image alt](https://github.com/Deepakharnekar/telecom-customer-churn-analysis/blob/c24f00dad1a4f1fd398b3080288500ad798dbc7a/screenshots/tenure.png)
+![image alt](https://github.com/Deepakharnekar/telecom-customer-churn-analysis/blob/c24f00dad1a4f1fd398b3080288500ad798dbc7a/screenshots/risk%20factors.png)
 
 > 📄 **Can't open Power BI?** View the full dashboard as a PDF → [`churn_dashboard.pdf`](https://github.com/Deepakharnekar/telecom-customer-churn-analysis/blob/85cf6abff8e4409859b95f2e61f6e4447b1b631f/Dashboard/telecom_churn.pdf)
 
