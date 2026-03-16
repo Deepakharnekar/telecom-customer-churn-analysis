@@ -87,15 +87,12 @@ The analysis used the following SQL concepts:
 
 ```sql
 SELECT
-    Contract,
-    COUNT(*) AS total_customers,
-    SUM(CASE WHEN Churn = 'Yes' THEN 1 ELSE 0 END) AS churned_customers,
-    ROUND(
-        SUM(CASE WHEN Churn = 'Yes' THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 2
-    ) AS churn_rate_pct
-FROM telco_customers
-GROUP BY Contract
-ORDER BY churn_rate_pct DESC;
+    Contract, 
+    COUNT(CustomerID) as customers,
+    (SELECT COUNT(*) from telco) as total_customers,-- using subquery...
+    ROUND(SUM(CASE WHEN Churn = 'Yes' THEN 1 ELSE 0 END) /COUNT(CustomerID) *100,2) as Churn_percentage
+FROM telco
+GROUP BY Contract;
 ```
 
 **Sample Query — Churn by Tenure Group (CTE):**
@@ -104,20 +101,20 @@ ORDER BY churn_rate_pct DESC;
 WITH tenure_segments AS (
     SELECT *,
         CASE
-            WHEN tenure <= 12  THEN '0-12 Months'
-            WHEN tenure <= 24  THEN '13-24 Months'
-            WHEN tenure <= 48  THEN '25-48 Months'
-            ELSE '49+ Months'
+            WHEN tenure BETWEEN 0 AND 12 THEN '0-12 Months'
+			WHEN tenure BETWEEN 13 AND 24 THEN '13-24 Months'
+			WHEN tenure BETWEEN 25 AND 48 THEN '25-48 Months'
+			ELSE '49+ Months' 
         END AS tenure_group
-    FROM telco_customers
+    FROM telco
 )
 SELECT
     tenure_group,
     COUNT(*) AS total_customers,
-    ROUND(AVG(CASE WHEN Churn = 'Yes' THEN 1.0 ELSE 0 END) * 100, 2) AS churn_rate_pct
+    ROUND(AVG(CASE WHEN Churn = 'Yes' THEN 1.0 ELSE 0 END) * 100, 2) AS churn_percentage
 FROM tenure_segments
 GROUP BY tenure_group
-ORDER BY churn_rate_pct DESC;
+ORDER BY churn_percentage DESC;
 ```
 
 ---
