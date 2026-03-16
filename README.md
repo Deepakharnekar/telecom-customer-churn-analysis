@@ -21,7 +21,7 @@ telecom-customer-churn-analysis/
 ├── sql/
 │   └── churn_analysis.sql                       # All SQL queries
 │
-├── screenshots                                  # Dashboard images
+├── screenshots                                  # Dashboard screenshots
 |   ├── overview.png
 |   └── services.png
 |   └── streaming & demographics.png
