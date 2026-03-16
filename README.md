@@ -153,13 +153,13 @@ ORDER BY churn_percentage DESC;
 
 ## ✅ Recommendations
 
-1. **Fix Fiber Optic churn urgently** — With a 43% churn rate vs. 19% for DSL and 7% for non-internet users, fiber optic is the single biggest service risk. Conduct customer feedback surveys to identify whether the issue is pricing, speed, or reliability.
+1. **Fix Fiber Optic churn urgently** — With a 42% churn rate vs. 19% for DSL and 7% for non-internet users, fiber optic is the single biggest service risk. Conduct customer feedback surveys to identify whether the issue is pricing, speed, or reliability.
 
-2. **Convert month-to-month customers to longer contracts** — 55% of customers are on month-to-month plans and churn the most. Offering bundled discounts or loyalty perks for switching to 1- or 2-year plans could significantly reduce attrition.
+2. **Convert month-to-month customers to longer contracts** — 43% of customers are on month-to-month plans and churn the most. Offering bundled discounts or loyalty perks for switching to 1- or 2-year plans could significantly reduce attrition.
 
-3. **Prioritize first-year onboarding** — Nearly half of new customers (49%) churn within the first 12 months. Early-stage retention programs, welcome offers, and proactive support during onboarding are critical.
+3. **Prioritize first-year onboarding** — Nearly half of new customers (48%) churn within the first 12 months. Early-stage retention programs, welcome offers, and proactive support during onboarding are critical.
 
-4. **Target the highest-risk segment** — New customers (0–12 months) on month-to-month contracts paying by electronic check churn at over 60%. Targeted interventions — discounts, transparent pricing, and nudges toward auto-pay — should focus here first.
+4. **Target the highest-risk segment** — New customers (0–12 months) on month-to-month contracts paying by electronic check churn at over 45%. Targeted interventions — discounts, transparent pricing, and nudges toward auto-pay — should focus here first.
 
 5. **Promote value-added services** — Customers with Online Security (14.6% churn) and Tech Support churn at less than half the rate of those without. Actively bundling or promoting these services could act as strong retention drivers.
 
