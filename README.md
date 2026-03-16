@@ -123,7 +123,10 @@ ORDER BY churn_percentage DESC;
 
 > 📌 *Power BI dashboard screenshots*
 ![image alt](https://github.com/Deepakharnekar/telecom-customer-churn-analysis/blob/09036d084b8fbf309f10a38e8280b4a6e01a58d7/screenshots/Screenshot%202026-03-16%20113936.png)
+![image alt](https://github.com/Deepakharnekar/telecom-customer-churn-analysis/blob/49d06e8915d7068e4b00b16600548094bdc37be5/screenshots/Screenshot%202026-03-16%20154616.png)
+![image alt](https://github.com/Deepakharnekar/telecom-customer-churn-analysis/blob/49d06e8915d7068e4b00b16600548094bdc37be5/screenshots/Screenshot%202026-03-16%20154644.png)
 ![image alt](https://github.com/Deepakharnekar/telecom-customer-churn-analysis/blob/ed498d99516f2b08d037f40a6471baf563ee4139/screenshots/Screenshot%202026-03-16%20114039.png)
+![image alt](https://github.com/Deepakharnekar/telecom-customer-churn-analysis/blob/49d06e8915d7068e4b00b16600548094bdc37be5/screenshots/Screenshot%202026-03-16%20164810.png)
 ![image alt](https://github.com/Deepakharnekar/telecom-customer-churn-analysis/blob/ed498d99516f2b08d037f40a6471baf563ee4139/screenshots/Screenshot%202026-03-16%20114054.png)
 ![image alt](https://github.com/Deepakharnekar/telecom-customer-churn-analysis/blob/ed498d99516f2b08d037f40a6471baf563ee4139/screenshots/Screenshot%202026-03-16%20114120.png)
 
