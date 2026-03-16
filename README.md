@@ -21,6 +21,15 @@ telecom-customer-churn-analysis/
 ├── sql/
 │   └── churn_analysis.sql                       # All SQL queries
 │
+├── screenshots                                  # Dashboard images
+|   ├── overview.png
+|   └── services.png
+|   └── streaming & demographics.png
+|   └── monthly & totalcharges.png
+|   └── contract & payment method.png
+|   └── tenure.png
+|   └── risk factors.png
+|
 ├── dashboard/
 │   ├── churn_dashboard.pbix                     # Power BI dashboard (editable)
 │   └── churn_dashboard.pdf                      # Dashboard export (view without Power BI)
