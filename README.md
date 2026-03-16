@@ -45,7 +45,7 @@ telecom-customer-churn-analysis/
 
 - **Source:** [Kaggle — Telco Customer Churn (IBM Watson)](https://www.kaggle.com/datasets/blastchar/telco-customer-churn)
 - **File:** `WA_Fn-UseC_-Telco-Customer-Churn.csv`
-- **Rows:** 7,043 customers
+- **Rows:** 7,032 customers
 - **Columns:** 21 features
 
 **Key fields used in analysis:**
@@ -83,37 +83,94 @@ The analysis used the following SQL concepts:
 - **Window Functions** — for running totals and ranking patterns
 - **JOINs** — to combine segmentation logic across derived tables
 
+**Sample Query — Churn Rate by Contract Type:**
+
+```sql
+SELECT
+    Contract,
+    COUNT(*) AS total_customers,
+    SUM(CASE WHEN Churn = 'Yes' THEN 1 ELSE 0 END) AS churned_customers,
+    ROUND(
+        SUM(CASE WHEN Churn = 'Yes' THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 2
+    ) AS churn_rate_pct
+FROM telco_customers
+GROUP BY Contract
+ORDER BY churn_rate_pct DESC;
+```
+
+**Sample Query — Churn by Tenure Group (CTE):**
+
+```sql
+WITH tenure_segments AS (
+    SELECT *,
+        CASE
+            WHEN tenure <= 12  THEN '0-12 Months'
+            WHEN tenure <= 24  THEN '13-24 Months'
+            WHEN tenure <= 48  THEN '25-48 Months'
+            ELSE '49+ Months'
+        END AS tenure_group
+    FROM telco_customers
+)
+SELECT
+    tenure_group,
+    COUNT(*) AS total_customers,
+    ROUND(AVG(CASE WHEN Churn = 'Yes' THEN 1.0 ELSE 0 END) * 100, 2) AS churn_rate_pct
+FROM tenure_segments
+GROUP BY tenure_group
+ORDER BY churn_rate_pct DESC;
+```
+
 ---
 
-
 ## 📊 Dashboard Preview
+
+> 📌 *Power BI dashboard screenshots*
 ```
 
 ```
+
+> 📄 **Can't open Power BI?** View the full dashboard as a PDF → [`churn_dashboard.pdf`](dashboard/churn_dashboard.pdf)
+
+---
 
 ## 💡 Key Insights
 
 | # | Insight | Business Implication |
 |---|---------|---------------------|
-| 1 | **Overall churn rate is 26.58%** | Over 1 in 4 customers are leaving — retention is a critical priority |
-| 2 | **Month-to-month customers churn the most** | Incentivizing annual contracts could significantly reduce churn |
-| 3 | **Fiber optic users show the highest churn** | Service quality or pricing for fiber users needs to be reviewed |
-| 4 | **Customers with tenure < 12 months are most likely to churn** | Early onboarding programs and loyalty perks could improve 1st-year retention |
-| 5 | **Higher monthly charges correlate with higher churn** | Offering tiered pricing or discounts for at-risk segments could help retain them |
+| 1 | **Overall churn rate is 26.6%** (1,869 out of 7,032) | Over 1 in 4 customers are leaving — retention is a critical priority |
+| 2 | **Month-to-month customers churn the most** (55% of all customers) | Incentivizing annual contracts could significantly reduce churn |
+| 3 | **Fiber optic users churn at 43%** vs. DSL at 19% and no internet at 7% | Service quality or pricing for fiber users urgently needs review |
+| 4 | **49% of customers churn within the first 12 months** — drops to 9% after 49+ months | Early onboarding programs and loyalty perks are the highest-ROI investment |
+| 5 | **Customers paying ₹81–100/month churn at 37%** — the highest charge bucket | Tiered pricing or loyalty discounts for high-charge customers could reduce attrition |
+| 6 | **Online Security & Tech Support are strong retention drivers** (churn ~14–15% with vs. ~31% without) | Actively bundling these services can reduce overall churn |
+| 7 | **Senior citizens churn at 42%** vs. 24% for non-seniors | Dedicated retention strategies needed for older customers |
+| 8 | **Electronic check users + month-to-month + 0–12 months = 60%+ churn** | This combined segment is the most urgent intervention target |
+
+> 📄 For a deeper breakdown of each insight with supporting data, see [`insights.md`](insights.md)
 
 ---
 
 ## ✅ Recommendations
 
-1. **Invest in early retention programs** — The first 12 months are the highest-risk window. Proactive check-ins, onboarding support, and early loyalty discounts can reduce this drop-off significantly.
+1. **Fix Fiber Optic churn urgently** — With a 43% churn rate vs. 19% for DSL and 7% for non-internet users, fiber optic is the single biggest service risk. Conduct customer feedback surveys to identify whether the issue is pricing, speed, or reliability.
 
-2. **Incentivize long-term contracts** — Month-to-month customers churn at a much higher rate. Offering discounts or added value for 1- or 2-year commitments could shift customers toward more stable plans.
+2. **Convert month-to-month customers to longer contracts** — 55% of customers are on month-to-month plans and churn the most. Offering bundled discounts or loyalty perks for switching to 1- or 2-year plans could significantly reduce attrition.
 
-3. **Investigate Fiber Optic service quality** — The high churn among fiber optic users suggests dissatisfaction with either pricing or service reliability. A targeted customer satisfaction survey for this segment is recommended.
+3. **Prioritize first-year onboarding** — Nearly half of new customers (49%) churn within the first 12 months. Early-stage retention programs, welcome offers, and proactive support during onboarding are critical.
+
+4. **Target the highest-risk segment** — New customers (0–12 months) on month-to-month contracts paying by electronic check churn at over 60%. Targeted interventions — discounts, transparent pricing, and nudges toward auto-pay — should focus here first.
+
+5. **Promote value-added services** — Customers with Online Security (14.6% churn) and Tech Support churn at less than half the rate of those without. Actively bundling or promoting these services could act as strong retention drivers.
+
+6. **Address price sensitivity for high-charge customers** — Customers paying 81–100 units/month churn at 37%. Introducing tiered pricing, loyalty discounts, or rewards for high-paying customers could reduce this significantly.
+
+7. **Build targeted strategies for senior citizens** — Senior citizens churn at 42% vs. 24% for non-seniors. Simplified plans, dedicated support, and senior-friendly pricing could improve retention in this segment.
+
+8. **Review paperless billing experience** — Paperless billing customers churn at 33.59% vs. 16.38% for non-paperless. Investigating pain points in the digital billing experience and improving transparency could help reduce this gap.
 
 ---
 
 ## 🙋 Author
 
-**Deepak Rajesh Harnekar**
+**[Deepak Rajesh Harnekar]**
 [[LinkedIn Profile](https://www.linkedin.com/in/deepakharnekar/)] | [https://github.com/Deepakharnekar]
