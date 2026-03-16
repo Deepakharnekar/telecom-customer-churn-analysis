@@ -122,9 +122,7 @@ ORDER BY churn_percentage DESC;
 ## 📊 Dashboard Preview
 
 > 📌 *Power BI dashboard screenshots*
-```
 ![image alt](https://github.com/Deepakharnekar/telecom-customer-churn-analysis/blob/09036d084b8fbf309f10a38e8280b4a6e01a58d7/screenshots/Screenshot%202026-03-16%20113936.png)
-```
 
 > 📄 **Can't open Power BI?** View the full dashboard as a PDF → [`churn_dashboard.pdf`](https://github.com/Deepakharnekar/telecom-customer-churn-analysis/blob/85cf6abff8e4409859b95f2e61f6e4447b1b631f/Dashboard/telecom_churn.pdf)
 
