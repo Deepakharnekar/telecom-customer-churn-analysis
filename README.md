@@ -143,7 +143,7 @@ ORDER BY churn_percentage DESC;
 | 7 | **Senior citizens churn at 42%** vs. 24% for non-seniors | Dedicated retention strategies needed for older customers |
 | 8 | **Electronic check users + month-to-month + 0–12 months = 60%+ churn** | This combined segment is the most urgent intervention target |
 
-> 📄 For a deeper breakdown of each insight with supporting data, see [`insights.md`](insights.md)
+> 📄 For a deeper breakdown of each insight with supporting data, see [`insights.md`]([insights.md](https://github.com/Deepakharnekar/telecom-customer-churn-analysis/blob/2e285c1eb52048260edd5dc432a0b921c979c444/insights.md))
 
 ---
 
